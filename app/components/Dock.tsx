@@ -17,6 +17,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import Image from "next/image";
 
 import "/app/Docks.css";
 
@@ -28,7 +29,6 @@ export type DockItemData = {
 };
 
 export type DockProps = {
-  items: DockItemData[];
   className?: string;
   distance?: number;
   panelHeight?: number;
@@ -153,17 +153,35 @@ function DockIcon({ children, className = "" }: DockIconProps) {
 }
 
 export default function Dock({
-  items,
   className = "",
   spring = { mass: 0.1, stiffness: 150, damping: 12 },
   magnification = 70,
-  distance = 200,
-  panelHeight = 68,
+  distance = 200,  
+  panelHeight = 68, 
   dockHeight = 256,
   baseItemSize = 50,
 }: DockProps) {
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
+
+  // Definir los items directamente en el Client Component
+  const items: DockItemData[] = [
+    {
+      icon: <Image src="/yo.svg" alt="Yo" width={32} height={32} />,
+      label: "Me",
+      onClick: () => alert("Hola, soy Oscar Vergara, un desarrollador web apasionado por la tecnología y la innovación. ¡Bienvenido a mi portafolio!")
+    },
+    {
+      icon: <Image src="/skills.svg" alt="Skills" width={32} height={32} />,
+      label: "Skills",
+      onClick: () => alert("Skills")
+    },
+    {
+      icon: <Image src="/projects.svg" alt="Projects" width={32} height={32} />,
+      label: "Projects",
+      onClick: () => alert("Projects")
+    },
+  ];
 
   const maxHeight = useMemo(
     () => Math.max(dockHeight, magnification + magnification / 2 + 4),

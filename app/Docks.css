@@ -14,10 +14,13 @@
   align-items: flex-end;
   width: fit-content;
   gap: 1rem;
-  border-radius: 1rem;
-  background-color: #060010;
-  border: 1px solid #222;
   padding: 0 0.5rem 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+              inset 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 .dock-item {
@@ -26,12 +29,13 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: #060010;
-  border: 1px solid #222;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+              inset 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 .dock-icon {

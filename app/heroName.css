@@ -1,0 +1,56 @@
+/* heroName.css - Sin interferencia con TextType */
+
+:root {
+  --oscar-color: #ffffff;
+  --surname-color: #E95420; /* Naranja Ubuntu */
+  --cursor-color: #00ff00;
+}
+
+.hero-name {
+  font-size: clamp(3rem, 8vw, 12rem) !important;
+  font-weight: 500 !important;
+  font-family: "Fira Code", "Courier New", monospace !important;
+  color: var(--oscar-color) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 0.9 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Cursor estilo terminal */
+.typing-cursor,
+.cursor {
+  color: var(--cursor-color) !important;
+  animation: blink 1s infinite;
+  text-shadow: 0 0 5px var(--cursor-color) !important;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Split parent para componentes de texto */
+.split-parent {
+  overflow: visible !important;
+  display: block !important;
+  color: var(--oscar-color) !important;
+  font-family: "Fira Code", monospace !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: clamp(2rem, 12vw, 6rem) !important;
+    letter-spacing: -0.01em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: clamp(1.5rem, 15vw, 4rem) !important;
+  }
+}
