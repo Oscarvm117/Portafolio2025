@@ -1,6 +1,5 @@
-export default function HomePage() {
-  return (
-    <div  className="min-h-screen p-8">
-    </div>
-  );
+import ClientProviders from './ClientProviders';
+
+export default function Home() {
+  return <ClientProviders />;
 }
